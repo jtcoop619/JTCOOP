@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+
+  /* Design System Colors */
+  --color-primary: #00346f;
+  --color-primary-container: #004a99;
+  --color-secondary: #006875;
+  --color-secondary-container: #00e3fd;
+  --color-tertiary: #41009d;
+  --color-tertiary-container: #5a20c4;
+  
+  --color-surface: #f9f9fc;
+  --color-surface-container-low: #f3f3f6;
+  --color-surface-container: #eeeef0;
+  --color-surface-container-high: #e8e8ea;
+  --color-surface-container-highest: #e2e2e5;
+  --color-surface-container-lowest: #ffffff;
+  
+  --color-on-surface: #1a1c1e;
+  --color-on-surface-variant: #424751;
+  --color-outline-variant: #c2c6d3;
+
+  /* Shadows */
+  --shadow-ambient: 0px 20px 40px rgba(0, 52, 111, 0.06);
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-surface/80 backdrop-blur-xl;
+}
+
+.ai-glow {
+  @apply absolute -top-24 -right-24 w-64 h-64 bg-tertiary-container/5 rounded-full blur-3xl;
+}
+
+.ghost-border {
+  @apply border border-outline-variant/20;
+}
